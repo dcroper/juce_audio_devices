@@ -20,7 +20,7 @@
   ==============================================================================
 */
 
-package com.roli.juce;
+package com.rmsl.juce;
 
 
 import android.bluetooth.BluetoothAdapter;
