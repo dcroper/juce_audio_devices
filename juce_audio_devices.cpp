@@ -114,6 +114,7 @@
 
  #include <juce_audio_basics/midi/juce_MidiDataConcatenator.h>
  #include "native/juce_win32_Midi.cpp"
+ #include "native/juce_win32_teVirtualMIDI.cpp"
 
  #if JUCE_ASIO
   /* This is very frustrating - we only need to use a handful of definitions from

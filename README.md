@@ -1,5 +1,4 @@
-# juce_audio_devices
-This is a `git subtree split` of the `juce_audio_devices` module from the JUCE project. This split was made in order to make it easier to maintain a custom version of this module in a separate repository while being able to pull updates from upstream project. Other than the addition of this README.md file, no changes have been made to contents of the module.
+# juce_audio_devices_teVirtualMIDI
+ An update to the juce_audio_devices module to support the creation of virtual MIDI devices on Windows using the [teVirtualMIDI driver](https://www.tobias-erichsen.de/software/virtualmidi.html).
 
-## How was this subtree split created?
-This subtree was created by running the command `git subtree split --prefix modules/juce_audio_devices --annotate='(split) ' --rejoin --squash --branch juce_audio_devices` on the `master` branch.
+This module does not include the driver itself in order to comply with the license of the driver. For the creation of new virtual MIDI devices to work the teVirtualMIDI driver and dll must already be installed on the system running the application. The driver is currently not available for standalone installation but can be installed as part of either [rtpMIDI](https://www.tobias-erichsen.de/software/rtpmidi.html) or [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html). If the `teVirtualMIDI.dll` is not present on the system at runtime then the `createNewDevice` methods will fail silently by returning an empty `std::unique_ptr<>`.
